@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@851-labs/ui/theme";
+
+@plugin "tailwindcss-animate";
+
+@source "../../../../packages/ui/src/**/*.{ts,tsx}";
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes sketch-draw {
+  0% {
+    stroke-dashoffset: 2150;
+  }
+  100% {
+    stroke-dashoffset: -150;
+  }
+}
+
+@keyframes cube-rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}

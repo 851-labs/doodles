@@ -1,0 +1,1 @@
+ALTER TABLE "doodles" ADD COLUMN "model_generation_started_at" timestamp with time zone;
