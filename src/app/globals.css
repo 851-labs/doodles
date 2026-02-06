@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-gray-50: oklch(0.985 0 0);
+  --color-gray-100: oklch(0.97 0 0);
+  --color-gray-200: oklch(0.922 0 0);
+  --color-gray-300: oklch(0.87 0 0);
+  --color-gray-400: oklch(0.708 0 0);
+  --color-gray-500: oklch(0.556 0 0);
+  --color-gray-600: oklch(0.439 0 0);
+  --color-gray-700: oklch(0.371 0 0);
+  --color-gray-800: oklch(0.269 0 0);
+  --color-gray-900: oklch(0.205 0 0);
+  --color-gray-950: oklch(0.145 0 0);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@layer base {
+  @keyframes spinner-leaf-fade {
+    from { opacity: 1; }
+    to { opacity: 0.25; }
+  }
+}
+
+@layer base {
+  body {
+    @apply antialiased [text-rendering:optimizelegibility] [text-size-adjust:100%];
+    @apply text-base text-gray-950 dark:text-gray-50;
+    @apply bg-white dark:bg-gray-950;
+    @apply relative;
+    scrollbar-gutter: stable both-edges;
+  }
+
+  * {
+    @apply border-gray-950/10 dark:border-white/10;
+    --marketing-page-layout-header-height: calc(var(--spacing) * 16);
+  }
+}
+
+@utility bg-material-md {
+  @apply bg-white/80 backdrop-blur-xl backdrop-saturate-200 dark:bg-gray-800/80;
+}
+
+@utility bg-material-lg {
+  @apply bg-white/90 backdrop-blur-xl backdrop-saturate-200 dark:bg-gray-900/90;
+}
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar { display: none; }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes sketch-draw {
+  0% {
+    stroke-dashoffset: 2150;
+  }
+  100% {
+    stroke-dashoffset: -150;
+  }
+}
+
+@keyframes cube-rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
