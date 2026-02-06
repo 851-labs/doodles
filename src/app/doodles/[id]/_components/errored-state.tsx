@@ -2,6 +2,7 @@
 
 import { useCallback, useState } from "react"
 
+import { ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -58,7 +59,7 @@ function ErroredState({ prompt }: ErroredStateProps) {
           type="submit"
           disabled={!inputValue.trim() || isGenerating}
           loading={isGenerating}
-          icon="arrow-up"
+          icon={<ArrowUp className="size-4" />}
           accessibilityLabel="Generate doodle"
         />
       </form>

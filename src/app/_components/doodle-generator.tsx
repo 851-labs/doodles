@@ -3,6 +3,7 @@
 import { useCallback, useMemo, useState } from "react"
 import { useSearchParams } from "next/navigation"
 
+import { ArrowUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -85,7 +86,7 @@ function DoodleGenerator({ placeholderExample }: DoodleGeneratorProps) {
             type="submit"
             disabled={!inputValue.trim() || isGenerating}
             loading={isGenerating}
-            icon="arrow-up"
+            icon={<ArrowUp className="size-4" />}
             accessibilityLabel="Generate doodle"
           />
         </form>

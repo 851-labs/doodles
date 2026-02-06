@@ -2,6 +2,7 @@
 
 import { useCallback, useState } from "react"
 
+import { ArrowUp, Download, Share } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { toast } from "sonner"
@@ -43,12 +44,12 @@ function DoodleActionsButtons({ prompt, imageUrl, doodleUrl }: DoodleActionsButt
 
   return (
     <div className="flex items-center gap-1">
-      <Button variant="ghost" size="sm" onClick={handleShare} icon="share" accessibilityLabel="Share doodle" />
+      <Button variant="ghost" size="sm" onClick={handleShare} icon={<Share className="size-4" />} accessibilityLabel="Share doodle" />
       <Button
         variant="ghost"
         size="sm"
         onClick={handleDownload}
-        icon="arrow-down-tray"
+        icon={<Download className="size-4" />}
         accessibilityLabel="Download doodle"
       />
     </div>
@@ -92,7 +93,7 @@ function DoodleActionsInput({ prompt }: DoodleActionsInputProps) {
         type="submit"
         disabled={!inputValue.trim() || isGenerating}
         loading={isGenerating}
-        icon="arrow-up"
+        icon={<ArrowUp className="size-4" />}
         accessibilityLabel="Generate doodle"
       />
     </form>
